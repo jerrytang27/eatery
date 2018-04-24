@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prince Benson Waimai</title>
+</head>
+<body>
+	<h1>Prince Benson Fusion Restaurant</h1>
+	<p>Tasty Treats To Your Door!</p>
+
+	<h2>Here are all our dishes!</h2>
+
+	<!-- Dish 1 -->
+	<p>Kung Pao Chicken: 32RMB</p>
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524579205900&di=798a912c1fa136631dfee23b9a8e3eee&imgtype=0&src=http%3A%2F%2Fwww.scxdf.com%2Fuploads%2Fallimg%2F140415%2F11-1404150Q6094M.jpg">
+	<br>
+
+	<!-- Dish 2 -->
+	<p>Tom Yum: 48RMB</p>
+	<img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2993953538,1743599243&fm=27&gp=0.jpg">
+
+	<!-- Dish 3 -->
+	<p>Hainanese Chicken Rice: 24RMB</p>
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524579275143&di=c9ebd1e5a7e6685a1dd76e77e15d669b&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20150531%2Fmp17097557_1433046435375_1_th.jpeg">
+
+	<!-- Order Form -->
+	<h2>Place your Order</h2>
+	<form action="{% url 'order:home_page' %}" method="POST">
+		{% csrf_token %}	
+		<input type="text" name="dish" placeholder="Please Type Which Food You Want"><br>
+		<textarea name="address" placeholder="Please Type Your Address"></textarea><br>
+		<input type="submit" value="Place Your Order">
+	</form>
+
+	<!-- Show Order -->
+	<h1>Your Order:</h1>
+	<p>Your Food Ordered: {{dish}}</p>
+	<p>Your Delivery Address: {{address}}</p>
+
+</body>
+</html>
